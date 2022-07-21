@@ -1,0 +1,8 @@
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\bin\Debug\Task6.12.exe.config
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\bin\Debug\Task6.12.exe
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\bin\Debug\Task6.12.pdb
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\obj\Debug\Task6.12.csproj.AssemblyReference.cache
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\obj\Debug\Task6.12.csproj.SuggestedBindingRedirects.cache
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\obj\Debug\Task6.12.csproj.CoreCompileInputs.cache
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\obj\Debug\Task6.12.exe
+C:\Users\Максим\Desktop\Unity\Task6.12\Task6.12\obj\Debug\Task6.12.pdb

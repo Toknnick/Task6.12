@@ -94,12 +94,13 @@ namespace Task6._12
             string[] genders = { "мужского", "женского", "разного" };
             string gender;
             int minCountOfAviaries = 4;
+            int minCountOfAnimals = 1;
             int maxCount = 10;
             int countOfAviaries = random.Next(minCountOfAviaries, maxCount);
 
             for (int i = 0; i < countOfAviaries; i++)
             {
-                int countOfAnimals = random.Next(1, maxCount);
+                int countOfAnimals = random.Next(minCountOfAnimals, maxCount);
 
                 if (countOfAviaries > 1)
                 {
@@ -157,17 +158,16 @@ namespace Task6._12
 
     class Aviary
     {
-        private NamesOfAnimals _name;
+        private Animal _animal = new Animal();
         private int _count;
         private string _gender;
-        private SoundsOfAnimals _sound;
 
         public Aviary(NamesOfAnimals name, int count, string gender, SoundsOfAnimals sound)
         {
-            _name = name;
+            _animal.SetName(name);
             _count = count;
             _gender = gender;
-            _sound = sound;
+            _animal.SetSounds(sound);
         }
 
         public void ShowInfo()
@@ -177,21 +177,37 @@ namespace Task6._12
 
         private string ChangeInfo()
         {
-            string text = $"В вольере {_name}. Их {_count}. Они {_gender} пола. Издают звуки {_sound}.";
+            string text = $"В вольере {_animal.Name}. Их {_count}. Они {_gender} пола. Издают звуки {_animal.Sounds}.";
 
             if (_count == 1)
             {
                 if (_gender == "мужского")
                 {
-                    text = $"В вольере {_name}. Он сидит там в одиночестве. Он {_gender} пола. Издает звуки {_sound}.";
+                    text = $"В вольере {_animal.Name}. Он сидит там в одиночестве. Он {_gender} пола. Издает звуки {_animal.Sounds}.";
                 }
                 else
                 {
-                    text = $"В вольере {_name}. Она сидит там в одиночестве. Она {_gender} пола. Издает звуки {_sound}.";
+                    text = $"В вольере {_animal.Name}. Она сидит там в одиночестве. Она {_gender} пола. Издает звуки {_animal.Sounds}.";
                 }
             }
 
             return text;
+        }
+    }
+
+    class Animal
+    {
+        public NamesOfAnimals Name { get; private set; }
+        public SoundsOfAnimals Sounds { get; private set; }
+
+        public void SetName(NamesOfAnimals name)
+        {
+            Name = name;
+        }
+
+        public void SetSounds(SoundsOfAnimals sounds)
+        {
+            Sounds = sounds;
         }
     }
 }

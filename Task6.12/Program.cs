@@ -160,13 +160,12 @@ namespace Task6._12
     {
         private Animal _animal = new Animal();
         private int _count;
-        private string _gender;
 
         public Aviary(NamesOfAnimals name, int count, string gender, SoundsOfAnimals sound)
         {
             _animal.SetName(name);
             _count = count;
-            _gender = gender;
+            _animal.SetGender(gender);
             _animal.SetSounds(sound);
         }
 
@@ -177,17 +176,17 @@ namespace Task6._12
 
         private string ChangeInfo()
         {
-            string text = $"В вольере {_animal.Name}. Их {_count}. Они {_gender} пола. Издают звуки {_animal.Sounds}.";
+            string text = $"В вольере {_animal.Name}. Их {_count}. Они {_animal.Gender} пола. Издают звуки {_animal.Sounds}.";
 
             if (_count == 1)
             {
-                if (_gender == "мужского")
+                if (_animal.Gender == "мужского")
                 {
-                    text = $"В вольере {_animal.Name}. Он сидит там в одиночестве. Он {_gender} пола. Издает звуки {_animal.Sounds}.";
+                    text = $"В вольере {_animal.Name}. Он сидит там в одиночестве. Он {_animal.Gender} пола. Издает звуки {_animal.Sounds}.";
                 }
                 else
                 {
-                    text = $"В вольере {_animal.Name}. Она сидит там в одиночестве. Она {_gender} пола. Издает звуки {_animal.Sounds}.";
+                    text = $"В вольере {_animal.Name}. Она сидит там в одиночестве. Она {_animal.Gender} пола. Издает звуки {_animal.Sounds}.";
                 }
             }
 
@@ -197,6 +196,7 @@ namespace Task6._12
 
     class Animal
     {
+        public string Gender { get; private set; }
         public NamesOfAnimals Name { get; private set; }
         public SoundsOfAnimals Sounds { get; private set; }
 
@@ -208,6 +208,11 @@ namespace Task6._12
         public void SetSounds(SoundsOfAnimals sounds)
         {
             Sounds = sounds;
+        }
+
+        public void SetGender(string gender)
+        {
+            Gender = gender;
         }
     }
 }
